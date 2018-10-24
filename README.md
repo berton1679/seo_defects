@@ -1,5 +1,11 @@
 # SEO Defect Parser
+[![Build Status](https://travis-ci.org/berton1679/seo_defects.svg?branch=master)](https://travis-ci.org/berton1679/seo_defects)
+[![Coverage Status](https://coveralls.io/repos/github/berton1679/seo_defects/badge.svg?branch=master)](https://coveralls.io/github/berton1679/seo_defects?branch=master)
+
+[![NPM](https://nodei.co/npm/seo_defects_sb.png)](https://nodei.co/npm/seo_defects_sb/)
+<!--[![NPM](https://nodei.co/npm-dl/seo_defects_sb.png?height=3)](https://nodei.co/npm/seo_defects_sb/)-->
 A seo defect parser. The parser could detect the seo defect rule.
+
 
 ## Installation
 ```
