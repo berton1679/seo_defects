@@ -67,14 +67,14 @@ parser.parse(function() {
 
 ## SeoParser
 
-### SeoParser.init(_input_, _output_, _rules_=_DefaultRule_)
+### SeoParser.init(_input_, _output_, _rules_=_null_)
 
 ``` javascript
 /**
  * init input and output streams, defect rules
  * @param {readableStream} input
  * @param {WritableStream} output
- * @param {Rule} rules 
+ * @param {Rule} rules, if null, check by default rules
  * @throws {SeoParserInputError} invalid typeof streams
  */
 ```

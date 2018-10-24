@@ -90,4 +90,74 @@ describe('Test SeoParser Class', function() {
     };
     parser.parse(endCb);
   });
+  it('test imgWithoutAlt', function(done) {
+    const stubOutputStream = sinon.createStubInstance(stream.Writable, {
+      write: sinon.spy(),
+    });
+    const parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream('tests/data/test1.html'),
+        stubOutputStream);
+    const endCb = function() {
+      expect(stubOutputStream.write.calledOnce).to.true;
+      done();
+    };
+    parser.parse(endCb);
+  });
+  it('test aWithoutRel', function(done) {
+    const stubOutputStream = sinon.createStubInstance(stream.Writable, {
+      write: sinon.spy(),
+    });
+    const parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream('tests/data/test2.html'),
+        stubOutputStream);
+    const endCb = function() {
+      expect(stubOutputStream.write.calledOnce).to.true;
+      done();
+    };
+    parser.parse(endCb);
+  });
+  it('test inHead', function(done) {
+    const stubOutputStream = sinon.createStubInstance(stream.Writable, {
+      write: sinon.spy(),
+    });
+    const parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream('tests/data/test3.html'),
+        stubOutputStream);
+    const endCb = function() {
+      expect(stubOutputStream.write.calledThrice).to.true;
+      done();
+    };
+    parser.parse(endCb);
+  });
+  it('test strongGreaterNum', function(done) {
+    const stubOutputStream = sinon.createStubInstance(stream.Writable, {
+      write: sinon.spy(),
+    });
+    const parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream('tests/data/test4.html'),
+        stubOutputStream);
+    const endCb = function() {
+      expect(stubOutputStream.write.calledOnce).to.true;
+      done();
+    };
+    parser.parse(endCb);
+  });
+  it('test h1Unique', function(done) {
+    const stubOutputStream = sinon.createStubInstance(stream.Writable, {
+      write: sinon.spy(),
+    });
+    const parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream('tests/data/test5.html'),
+        stubOutputStream);
+    const endCb = function() {
+      expect(stubOutputStream.write.calledOnce).to.true;
+      done();
+    };
+    parser.parse(endCb);
+  });
 });
