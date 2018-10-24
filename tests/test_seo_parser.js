@@ -172,7 +172,6 @@ describe('Test SeoParser Class', function() {
         [seoDefects.metaNameRobotsNotExist()]);
     let endCb = function() {
       expect(stubOutputStream.write.notCalled).to.true;
-      done();
     };
     parser.parse(endCb);
 
