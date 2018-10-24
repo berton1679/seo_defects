@@ -3,7 +3,7 @@ A seo defect parser. The parser could detect the seo defect rule.
 
 ## Installation
 ```
-npm install seo_defects
+npm install seo_defects_sb
 ```
 
 ## Example
@@ -11,7 +11,7 @@ npm install seo_defects
 * Check the file `test.html` by the default rule, and output to `STDOut`
 
 ```javascript
-const seoDefects = require('seo_defects');
+const seoDefects = require('seo_defects_sb');
 
 const parser = new seoDefects.SeoParser();
 
