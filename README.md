@@ -98,6 +98,9 @@ Default rules:
 4. Detect if there’re more than _{num}_ \<strong> tag in HTML(__strongGreaterNum(_num_)__) 
 5. Detect if a HTML have more than one \<H1> tag(__h1Unique()__)
 
+Package defined rules:
+1. Detect if <meta name=“robots” /> does not exist(__metaNameRobotsNotExist()__)
+
 ## Rule
 A object decides whether to write the error message to the writable stream.
 
