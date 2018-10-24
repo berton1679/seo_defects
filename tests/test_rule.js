@@ -1,11 +1,11 @@
 /** Test Cond Class */
 const expect = require('chai').expect;
-const rule = require('./../lib/rule.js');
+const Rule = require('..').Rule;
 const sinon = require('sinon');
 
 describe('Test Rule Class', function() {
   it('test equal, less, greater, msg function', function() {
-    let testRule = new rule.Rule();
+    let testRule = new Rule();
     testRule = testRule.equal(1);
     expect(testRule._errorCondition()).to.equal(false);
 
@@ -24,7 +24,7 @@ describe('Test Rule Class', function() {
       checkValid: sinon.fake.returns(true),
       closeTag: sinon.fake.returns(false),
     };
-    const testRule = new rule.Rule(mockCond);
+    const testRule = new Rule(mockCond);
     testRule.openTag(null, null);
     expect(testRule._validCount).to.equal(1);
     testRule.closeTag(null, null);
@@ -34,7 +34,7 @@ describe('Test Rule Class', function() {
     const mockStream = {
       write: sinon.spy(),
     };
-    let testRule = new rule.Rule();
+    let testRule = new Rule();
     testRule = testRule.less(1);
     testRule.msg('testMsg');
     testRule.check(mockStream);

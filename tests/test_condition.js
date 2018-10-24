@@ -1,10 +1,10 @@
 /** Test Cond Class */
 const expect = require('chai').expect;
-const cond = require('./../lib/condition.js');
+const Cond = require('../').Cond;
 
 describe('Test Cond Class', function() {
   it('test tag()', function() {
-    const testCond = new cond.Cond();
+    const testCond = new Cond();
     const testTag = 'test';
     const tag = testCond.tag(testTag);
     expect(tag._tagName).to.equal(testTag);
@@ -12,7 +12,7 @@ describe('Test Cond Class', function() {
   });
 
   it('test exist()', function() {
-    const testCond = new cond.Cond();
+    const testCond = new Cond();
     const testTag = 'testTag';
     const testAttrib = 'testAttrib';
     const testAttribValue = 'value';
@@ -52,7 +52,7 @@ describe('Test Cond Class', function() {
   });
 
   it('test notEexist()', function() {
-    const testCond = new cond.Cond();
+    const testCond = new Cond();
     const testTag = 'testTag';
     const testAttrib = 'testAttrib';
     const testAttribValue = 'value';
@@ -91,8 +91,8 @@ describe('Test Cond Class', function() {
   });
 
   it('test has()', function() {
-    const testCond = new cond.Cond();
-    const testChildCond = new cond.Cond();
+    const testCond = new Cond();
+    const testChildCond = new Cond();
     const testTag = 'test';
     const testChildTag = 'testChild';
     const tagCond = testCond.tag(testTag);
@@ -103,8 +103,8 @@ describe('Test Cond Class', function() {
   });
 
   it('test checkValid() process', function() {
-    const testCond = new cond.Cond();
-    const testChildCond = new cond.Cond();
+    const testCond = new Cond();
+    const testChildCond = new Cond();
     const testTag = 'test';
     const testChildTag = 'testChild';
     const tagCond = testCond.tag(testTag);
@@ -123,7 +123,7 @@ describe('Test Cond Class', function() {
   });
 
   it('test tag has attribute with certain value', function() {
-    const testCond = new cond.Cond();
+    const testCond = new Cond();
     const testTag = 'test';
     const testAttrib = 'testAttrib';
     const testAttribValue = 'testAttribValue';

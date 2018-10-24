@@ -1,15 +1,28 @@
 {
-  "name": "shopback_seo",
+  "name": "seo_defects_sb",
   "version": "1.0.0",
-  "description": "assignmennt",
-  "main": "index.js",
+  "description": "seo defects detector assignment",
+  "main": "lib/index.js",
   "scripts": {
     "lcov": "istanbul cover _mocha tests --report lcovonly -- -R spec",
     "coveralls": "npm run lint && npm run lcov && (cat coverage/lcov.info | coveralls || exit 0)",
     "test": "mocha tests && npm run lint",
     "lint": "eslint lib tests"
   },
-  "author": "berton",
+  "keywords": [
+    "seo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/berton1679/seo_defects.git"
+  },
+  "directories": {
+    "lib": "lib/"
+  },
+  "files": [
+    "lib"
+  ],
+  "author": "berton1679@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",

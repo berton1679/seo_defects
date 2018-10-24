@@ -1,12 +1,10 @@
 /** Test Cond Class */
 const expect = require('chai').expect;
-const api = require('../lib/seo_parser.js');
-const Rule = require('../lib/rule.js').Rule;
-const Cond = require('./../lib/condition.js').Cond;
-const SeoParser = api.SeoParser;
-const SeoParserInputError = api.SeoParserInputError;
-const seoRule = require('../lib/seo_rule.js');
-const seoStream = require('../lib/seo_stream.js');
+const seoDefects = require('..');
+const Rule = seoDefects.Rule;
+const Cond = seoDefects.Cond;
+const SeoParser = seoDefects.SeoParser;
+const SeoParserInputError = seoDefects.SeoParserInputError;
 
 const sinon = require('sinon');
 const stream = require('stream');
@@ -18,7 +16,7 @@ describe('Test SeoParser Class', function() {
     });
     const parser = new SeoParser();
     parser.init(
-        seoStream.fileReadableStream('tests/data/test.html'),
+        seoDefects.fileReadableStream('tests/data/test.html'),
         stubOutputStream);
     const endCb = function() {
       expect(stubOutputStream.write.calledOnce).to.true;
@@ -42,7 +40,7 @@ describe('Test SeoParser Class', function() {
 
     const parser = new SeoParser();
     expect(() => parser.init(
-        seoStream.fileReadableStream('tests/data/test.html'),
+        seoDefects.fileReadableStream('tests/data/test.html'),
         stubOutputStream))
         .to.throw(SeoParserInputError, 'writable');
   });
@@ -52,13 +50,13 @@ describe('Test SeoParser Class', function() {
     });
     const parser = new SeoParser();
     const rules = [
-      seoRule.aWithoutRel(),
-      seoRule.h1Unique(),
-      seoRule.inHeadMetaNameIsDescriptions(),
-      seoRule.strongGreaterNum(1),
+      seoDefects.aWithoutRel(),
+      seoDefects.h1Unique(),
+      seoDefects.inHeadMetaNameIsDescriptions(),
+      seoDefects.strongGreaterNum(1),
     ];
     parser.init(
-        seoStream.fileReadableStream('tests/data/test.html'),
+        seoDefects.fileReadableStream('tests/data/test.html'),
         stubOutputStream,
         rules);
     const endCb = function() {
@@ -77,13 +75,13 @@ describe('Test SeoParser Class', function() {
     const userRule = new Rule(cond);
     userRule.equal(0);
     const rules = [
-      seoRule.h1Unique(),
-      seoRule.inHeadMetaNameIsDescriptions(),
-      seoRule.strongGreaterNum(1),
+      seoDefects.h1Unique(),
+      seoDefects.inHeadMetaNameIsDescriptions(),
+      seoDefects.strongGreaterNum(1),
       userRule,
     ];
     parser.init(
-        seoStream.fileReadableStream('tests/data/test.html'),
+        seoDefects.fileReadableStream('tests/data/test.html'),
         stubOutputStream,
         rules);
     const endCb = function() {
