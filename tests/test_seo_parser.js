@@ -160,4 +160,33 @@ describe('Test SeoParser Class', function() {
     };
     parser.parse(endCb);
   });
+  it('test metaNameRobotsNotExist', function(done) {
+    const stubOutputStream = sinon.createStubInstance(stream.Writable, {
+      write: sinon.spy(),
+    });
+    let parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream(
+            'tests/data/test_meta_name_robots.html'),
+        stubOutputStream,
+        [seoDefects.metaNameRobotsNotExist()]);
+    let endCb = function() {
+      expect(stubOutputStream.write.notCalled).to.true;
+      done();
+    };
+    parser.parse(endCb);
+
+    stubOutputStream.write.resetHistory();
+    parser = new SeoParser();
+    parser.init(
+        seoDefects.fileReadableStream(
+            'tests/data/test5.html'),
+        stubOutputStream,
+        [seoDefects.metaNameRobotsNotExist()]);
+    endCb = function() {
+      expect(stubOutputStream.write.calledOnce).to.true;
+      done();
+    };
+    parser.parse(endCb);
+  });
 });
