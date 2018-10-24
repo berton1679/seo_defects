@@ -99,7 +99,7 @@ Default rules:
 5. Detect if a HTML have more than one \<H1> tag(__h1Unique()__)
 
 Package defined rules:
-1. Detect if <meta name=“robots” /> does not exist(__metaNameRobotsNotExist()__)
+1. Detect if \<meta name=“robots” /> does not exist(__metaNameRobotsNotExist()__)
 
 ## Rule
 A object decides whether to write the error message to the writable stream.
