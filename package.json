@@ -1,6 +1,6 @@
 {
   "name": "seo_defects_sb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "seo defects detector assignment",
   "main": "lib/index.js",
   "scripts": {
